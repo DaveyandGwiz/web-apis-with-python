@@ -1,0 +1,62 @@
+Index: app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask, jsonify, request\r\n\r\n# Intitialise the app\r\napp = Flask(__name__)\r\n\r\n# Define what the app does\r\n@app.get(\"/\")\r\ndef index():\r\n    \"\"\"\r\n    TODO:\r\n    1. Capture first name & last name\r\n    2. If either is not provided: respond with an error\r\n    3. If first name is not provided and second name is provided: respond with \"Hello Mr <second-name>!\"\r\n    4. If first name is provided byt second name is not provided: respond with \"Hello, <first-name>!\"\r\n    5. If both names are provided: respond with a question, \"Is your name <fist-name> <second-name>\r\n    \"\"\"\r\n    # Grab variable 'name' from query string\r\n    fname = request.args.get('fname')\r\n    lname = request.args.get('lname')\r\n    if fname and not lname:\r\n        return jsonify({\"Hey\":f\"{fname}!\"})\r\n    elif lname and not fname:\r\n        return jsonify({f\"Cirle\": f\"{lname}!\"})\r\n    elif lname and fname:\r\n        return jsonify({\"They call me\": f\"{fname} {lname}!\"})\r\n    else:\r\n        return jsonify({\"I\": \"am a circle and I identified as a circle\"})
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.py b/app.py
+--- a/app.py	
++++ b/app.py	
+@@ -1,10 +1,24 @@
+-from flask import Flask, jsonify, request
++from flask import Flask, jsonify, request, render_template, abort, redirect, url_for
+ 
+ # Intitialise the app
+ app = Flask(__name__)
+ 
++@app.route('/silly')
++def redirection_ex():
++    return redirect(url_for('login'))
++
++@app.route('/login')
++def login():
++    abort(401)
++    this_is_never_executed()
++
++@app.route('/hello/')
++@app.route('/hello/<name>')
++def hello(name=None):
++    return render_template('hello.html', name=name)
++
+ # Define what the app does
+-@app.get("/")
++@app.get("/") # tells flask which route should trigger our function
+ def index():
+     """
+     TODO:
+@@ -24,4 +38,21 @@
+     elif lname and fname:
+         return jsonify({"They call me": f"{fname} {lname}!"})
+     else:
+-        return jsonify({"I": "am a circle and I identified as a circle"})
+\ No newline at end of file
++        return render_template('hello.html', name="greg")
++
++@app.get('/post/<int:post_id>')
++def show_post(post_id):
++    # show the post with the given id, the id is an integer
++    return f'int {post_id}'
++
++@app.get('/post/<string:post_id>')
++def show_post2(post_id):
++    # show the post with the given id, the id is an integer
++    return f'string {post_id}'
++
++# @app.route('/login', methods=['GET', 'POST'])
++# def login():
++#     if request.method == 'POST':
++#         return do_the_login()
++#     else:
++#         return show_the_login_form()
+\ No newline at end of file

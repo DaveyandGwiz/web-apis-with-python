@@ -1,0 +1,53 @@
+Index: app.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from flask import Flask, request, render_template, redirect\r\n\r\napp = Flask(__name__)\r\n\r\n@app.get(\"/\")\r\ndef index():\r\n    \"\"\"\r\n    TODO: Render the home page provided under templates/index.html in the repository\r\n    \"\"\"\r\n    return \"TODO\"\r\n\r\n@app.get(\"/search\")\r\ndef search():\r\n\t\"\"\"\r\n\tTODO:\r\n\t1. Capture the word that is being searched\r\n\t2. Seach for the word on Google and display results\r\n\t\"\"\"\r\n    return \"TODO\"\r\n\r\nif __name__ == \"__main__\":\r\n    app.run()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.py b/app.py
+--- a/app.py	
++++ b/app.py	
+@@ -7,16 +7,21 @@
+     """
+     TODO: Render the home page provided under templates/index.html in the repository
+     """
+-    return "TODO"
++    return render_template("index.html")
+ 
+ @app.get("/search")
+ def search():
+-	"""
++    """
+ 	TODO:
+ 	1. Capture the word that is being searched
+ 	2. Seach for the word on Google and display results
+ 	"""
+-    return "TODO"
++    args = request.args.get("q")
++    return redirect(f"https://www.google.com/search?q={args}")
+ 
++
++@app.get("/anime")
++def culture():
++    return render_template("anime.html")
+ if __name__ == "__main__":
+     app.run()
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_16\" project-jdk-name=\"Python 3.10 (web-apis-with-python)\" project-jdk-type=\"Python SDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Python 3.10 (web-apis-with-python)" project-jdk-type="Python SDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Python 3.10 (web-apis-with-python) (2)" project-jdk-type="Python SDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

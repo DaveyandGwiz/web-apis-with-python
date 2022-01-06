@@ -1,0 +1,27 @@
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>appdirs==1.4.4\r\nasgiref==3.3.4\r\nbackcall==0.2.0\r\nblack==21.5b2\r\nclick==8.0.1\r\ndecorator==5.0.9\r\nfastapi==0.65.1\r\nFlask==2.0.1\r\ngunicorn==20.1.0\r\nh11==0.12.0\r\nhttptools==0.2.0\r\nipykernel==5.5.5\r\nipython==7.24.0\r\nipython-genutils==0.2.0\r\nitsdangerous==2.0.1\r\njedi==0.18.0\r\nJinja2==3.0.1\r\njupyter-client==6.1.12\r\njupyter-core==4.7.1\r\nMarkupSafe==2.0.1\r\nmatplotlib-inline==0.1.2\r\nmypy-extensions==0.4.3\r\nparso==0.8.2\r\npathspec==0.8.1\r\npexpect==4.8.0\r\npickleshare==0.7.5\r\nPillow==8.2.0\r\nprompt-toolkit==3.0.18\r\nptyprocess==0.7.0\r\npydantic==1.8.2\r\nPygments==2.9.0\r\npython-dateutil==2.8.1\r\npython-dotenv==0.17.1\r\npython-multipart==0.0.5\r\nPyYAML==5.4.1\r\npyzmq==22.1.0\r\nregex==2021.4.4\r\nsix==1.16.0\r\nstarlette==0.14.2\r\ntoml==0.10.2\r\ntornado==6.1\r\ntraitlets==5.0.5\r\ntyping-extensions==3.10.0.0\r\nuvicorn==0.14.0\r\nuvloop==0.15.2\r\nwatchgod==0.7\r\nwcwidth==0.2.5\r\nwebsockets==9.1\r\nWerkzeug==2.0.1\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt	(revision a54708ccfd1724b9c93a6b90dbe42f7365e8dc06)
++++ b/requirements.txt	(date 1641330587851)
+@@ -24,7 +24,7 @@
+ pathspec==0.8.1
+ pexpect==4.8.0
+ pickleshare==0.7.5
+-Pillow==8.2.0
++Pillow==9.0.0
+ prompt-toolkit==3.0.18
+ ptyprocess==0.7.0
+ pydantic==1.8.2
+@@ -42,7 +42,6 @@
+ traitlets==5.0.5
+ typing-extensions==3.10.0.0
+ uvicorn==0.14.0
+-uvloop==0.15.2
+ watchgod==0.7
+ wcwidth==0.2.5
+ websockets==9.1

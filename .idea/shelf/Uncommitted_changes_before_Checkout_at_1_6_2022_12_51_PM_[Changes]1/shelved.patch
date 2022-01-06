@@ -1,0 +1,40 @@
+Index: templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"shortcut icon\" href=\"https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png\"\r\n        type=\"image/x-icon\">\r\n    <title>Goggle</title>\r\n    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"static/styles.css\">\r\n</head>\r\n\r\n<body>\r\n    <div class=\"main-wrapper\">\r\n        <div class=\"logo-container\">\r\n            <img src=\"static/logo.png\" alt=\"Lazy man's Google\">\r\n        </div>\r\n        <div class=\"search-bar\">\r\n            <form action=\"/search\" method=\"get\">\r\n                <input type=\"search\" name=\"q\" autocomplete=\"false\" autofocus>\r\n                <button type=\"submit\">Goggle Search</button>\r\n                <button type=\"submit\">I'm Feeling Lucky</button>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</body>\r\n\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/templates/index.html b/templates/index.html
+--- a/templates/index.html	
++++ b/templates/index.html	
+@@ -20,8 +20,8 @@
+         <div class="search-bar">
+             <form action="/search" method="get">
+                 <input type="search" name="q" autocomplete="false" autofocus>
+-                <button type="submit">Goggle Search</button>
+-                <button type="submit">I'm Feeling Lucky</button>
++                <button type="submit">Hentai</button>
++                <button type="submit">I'm Feeling cucky</button>
+             </form>
+         </div>
+     </div>
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>backcall==0.2.0\r\nclick==8.0.1\r\ndecorator==5.0.9\r\nFlask==2.0.1\r\ngunicorn==20.1.0\r\nipykernel==5.5.5\r\nipython==7.24.0\r\nipython-genutils==0.2.0\r\nitsdangerous==2.0.1\r\njedi==0.18.0\r\nJinja2==3.0.1\r\njupyter-client==6.1.12\r\njupyter-core==4.7.1\r\nMarkupSafe==2.0.1\r\nmatplotlib-inline==0.1.2\r\nparso==0.8.2\r\npexpect==4.8.0\r\npickleshare==0.7.5\r\nPillow==8.2.0\r\nprompt-toolkit==3.0.18\r\nptyprocess==0.7.0\r\nPygments==2.9.0\r\npython-dateutil==2.8.1\r\npyzmq==22.1.0\r\nsix==1.16.0\r\ntornado==6.1\r\ntraitlets==5.0.5\r\nwcwidth==0.2.5\r\nWerkzeug==2.0.1
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+--- a/requirements.txt	
++++ b/requirements.txt	
+@@ -16,7 +16,7 @@
+ parso==0.8.2
+ pexpect==4.8.0
+ pickleshare==0.7.5
+-Pillow==8.2.0
++Pillow
+ prompt-toolkit==3.0.18
+ ptyprocess==0.7.0
+ Pygments==2.9.0
