@@ -13,7 +13,7 @@ def index():
     """
     response = {"usage": "/dict?=<word>"}
     # Since this is a website with front-end, we don't need to send the usage instructions
-    return jsonify(response)
+    return render_template("index.html")
 
 @app.get("/dict")
 def dictionary():
@@ -24,19 +24,22 @@ def dictionary():
     2. Try to find an exact match, and return it if found
     3. If not found, find all approximate matches and return
     """
-    word = request.args.get("word")
-    if not word:
+    words = request.args.getlist("word")
+    if not words:
         return jsonify({"status":"error", "data": 'word not found'})
-    definition = match_exact(word)
-    if definition:
-        return jsonify({"status":"success","data": definition})
-    # try to find an approx match
-    definition = match_like(word)
-    if definition:
-        return jsonify({"status":"partial", "data":definition})
-    else:
-        return jsonify({"status":"error","data":"Word not found"})
-
+    response = {"words": []}
+    for word in words:
+        definition = match_exact(word)
+        if definition:
+            response["words"].append({"status":"success","word":word,"data":definition})
+        else:
+        # try to find an approx match
+            definition = match_like(word)
+            if definition:
+                response["words"].append({"status":"partial","word":word,"data":definition})
+            else:
+                response["words"].append({"status":"error","word":word,"data":"word not found"})
+    return jsonify(response)
 
 if __name__ == "__main__":
     app.run()
